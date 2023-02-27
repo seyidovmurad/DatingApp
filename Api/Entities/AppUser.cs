@@ -1,6 +1,8 @@
 
 //using System.ComponentModel.DataAnnotations;
 
+using Api.Extensions;
+
 namespace Api.Entities
 {
     public class AppUser
@@ -36,6 +38,5 @@ namespace Api.Entities
 
         public List<Photo> Photos { get; set; } = new();
 
-        
     }
 }
