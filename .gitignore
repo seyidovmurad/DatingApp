@@ -476,3 +476,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 Api/appsettings.json
+.vscode/launch.json
+.gitignore
