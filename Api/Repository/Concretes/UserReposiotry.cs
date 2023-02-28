@@ -22,7 +22,7 @@ namespace Api.Repository.Concretes
         public async Task<MemberDto> GetMemberAsync(string username)
         {
             return await _context.Users
-                        .Where(u => u.UserName == username)
+                        .Where(u => u.UserName.ToLower() == username.ToLower())
                         .ProjectTo<MemberDto>(__mapper.ConfigurationProvider)
                         .FirstOrDefaultAsync();
         }
@@ -38,7 +38,7 @@ namespace Api.Repository.Concretes
         {
             return await _context.Users
                         .Include(u => u.Photos)
-                        .FirstOrDefaultAsync(u => u.UserName == username);
+                        .FirstOrDefaultAsync(u => u.UserName.ToLower() == username.ToLower());
         }
 
         public async Task<AppUser> GetUserAsync(int id)
