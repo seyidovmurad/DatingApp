@@ -15,6 +15,7 @@ namespace Api.Helpers
                 .ForMember(dest => dest.Age, opt => opt.MapFrom(u => u.DateOfBirth.GetYearFromUtcNow()));
             CreateMap<Photo, PhotoDto>();
             CreateMap<MemberUpdateDto, AppUser>(); 
+            CreateMap<RegisterDto, AppUser>();
         }
     }
 }
